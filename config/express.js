@@ -1,6 +1,6 @@
 var express = require('express'),
   morgan = require('morgan'),
-  compress = require('compress'),
+  compression = require('compression'),
   bodyParser = require('body-parser');
 
 module.exports = function(){
@@ -9,7 +9,7 @@ module.exports = function(){
   if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
   } else if (process.env.NODE_ENV === 'production'){
-    app.use(express.compress());
+    app.use(compression());
   }
 
   app.use(express.static('public/'));
