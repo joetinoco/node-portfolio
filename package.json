@@ -1,12 +1,12 @@
 {
-  "name": "mymean",
-  "version": "0.0.1",
-  "description": "Class example",
+  "name": "JosephTinocoPortfolio",
+  "version": "0.1.0",
+  "description": "A personal portfolio built with node.js, as an assignment for the 'Emerging Technologies' class. (I don't really see the point in building a static site with Node, but anyway...)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Joseph Tinoco",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
