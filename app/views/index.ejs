@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Joseph Tinoco</title>
+      <!--Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <!-- Navigation -->
+      <% include components/navbar %>
+
+      <!-- Page highlight - it can be a huge title or a carousel -->
+      <% if (typeof highlightImage !== 'undefined') { %>
+        <%- include(pageHighlight, { imgname: highlightImage } ) %>
+      <% } else { %>
+        <%- include(pageHighlight) %>
+      <% } %>
+
+      <!-- Main container -->
+      <div class="container">
+        <%- pageContent %>
+      </div>
+
+      <!-- Footer -->
+      <% include components/footer %>
+
+      <!-- Materialize -->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+  </html>

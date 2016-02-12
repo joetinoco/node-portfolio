@@ -1,0 +1,65 @@
+<div class="row">
+   <div class="col s12 m12">
+     <br/><br/>
+     <% if (response) { %>
+       <% if (response.success === 'true') { %>
+
+         <!-- Form feedback for success -->
+         <div class="row">
+           <div class="col s12 m12">
+             <div class="card-panel green darken-1">
+               <span class="white-text">Your message was sent successfully!</span>
+             </div>
+           </div>
+         </div>
+
+       <% } else { %>
+
+        <!-- Form feedback for failure -->
+         <div class="row">
+           <div class="col s12 m12">
+             <div class="card-panel red darken-4">
+               <span class="white-text">Error sending message. Try again later.</span>
+             </div>
+           </div>
+         </div>
+
+       <% } %>
+
+     <% } else { %>
+
+        <!-- Show form -->
+       <div class="card grey lighten-4 hoverable">
+         <div class="card-content black-text">
+           <span class="card-title">Contact me!</span>
+           <p>Fill out the form below:</p>
+            <br />
+            <br />
+           <div class="row">
+             <form class="col s12" id="contactForm" action="/submitform" method="post">
+               <div class="row">
+                 <div class="input-field col s6">
+                   <input id="name" name="name" type="text" class="validate">
+                   <label for="name">Your name</label>
+                 </div>
+                 <div class="input-field col s6">
+                   <input id="email" name="email" type="email" class="validate">
+                   <label for="email">Your email</label>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="input-field col s12">
+                   <textarea id="message" name="message" class="materialize-textarea"></textarea>
+                   <label for="message">Your message</label>
+                 </div>
+               </div>
+           </div>
+         </div>
+         <div class="card-action">
+           <a class="btn blue white-text" href="#" onclick="$('#contactForm').submit();" >Submit</a>
+         </div>
+        </form>
+       </div>
+     <% } %>
+   </div>
+ </div>
