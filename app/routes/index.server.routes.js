@@ -1,3 +1,19 @@
+/*
+
+  Page routes
+  ===========
+
+  Each route invokes the corresponding controller, which dictates page layout
+  and content.
+
+  This router manages five routes:
+  - The home page (server root)
+  - "About me" page
+  - "Projects" page
+  - "Services" page
+  - "Contact me" page
+
+*/
 module.exports = function(app){
   var index = require('../controllers/index.server.controller');
   var about = require('../controllers/about.server.controller');

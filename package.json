@@ -1,6 +1,6 @@
 {
   "name": "JosephTinocoPortfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A personal portfolio built with node.js, as an assignment for the 'Emerging Technologies' class. (I don't really see the point in building a static site with Node, but anyway...)",
   "main": "server.js",
   "engine": {

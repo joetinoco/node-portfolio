@@ -1,3 +1,7 @@
+/*
+All styles come from Materialize CSS. 
+This one is only used to stretch images to full page width
+*/
 .stretch {
   width: 100%;
 }

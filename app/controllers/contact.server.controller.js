@@ -1,3 +1,13 @@
+/*
+  "Contact" controller
+  ==================
+
+  Serves the contact layout and the feedback for form submission.
+  Also handles the form POST request and email transmission.
+
+*/
+
+// Serve the contact form
 exports.render = function(req, res){
   var response = undefined;
   if (typeof req.query.success !== 'undefined'){
@@ -12,6 +22,7 @@ exports.render = function(req, res){
 exports.submit = function(req, res){
   var nodemailer = require('nodemailer');
 
+  // Configure the SMTP mailer
   var mailer = nodemailer.createTransport({
     host: 'mail.josetinoco.com',
     port: 465,
@@ -28,6 +39,7 @@ exports.submit = function(req, res){
     maxMessages: 2 // Maximum 2 messages per SMTP connection
   });
 
+  // Set up mail contents
   var mailContent = {
       from: req.body.name + ' <' + req.body.email + '>',
       to: 'jose.tinoco@gmail.com',
@@ -35,8 +47,9 @@ exports.submit = function(req, res){
       text: req.body.message
   };
 
+  // Send mail (only in the production environment)
   if (process.env.NODE_ENV === 'development'){
-    res.redirect("/contact?success=true"); // Dev environment, no email is sent
+    res.redirect("/contact?success=true");
   } else {
     mailer.sendMail(mailContent, function (error, response) {
         var success;
